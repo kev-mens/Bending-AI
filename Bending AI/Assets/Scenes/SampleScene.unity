@@ -607,7 +607,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 210304770}
-  m_LocalRotation: {x: 0.3232461, y: 0.010478639, z: -0.003579581, w: 0.9462502}
+  m_LocalRotation: {x: 0.3232461, y: 0.010478606, z: -0.0035795697, w: 0.9462502}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -781,7 +781,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 649177867}
-  m_LocalRotation: {x: 0.30602655, y: 0.010541873, z: -0.003388901, w: 0.9519586}
+  m_LocalRotation: {x: 0.30602655, y: 0.010541834, z: -0.0033888884, w: 0.9519586}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1280,8 +1280,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1297650280}
-  m_LocalRotation: {x: 0.32324612, y: 0.010478652, z: -0.0035795853, w: 0.94625014}
-  m_LocalPosition: {x: 24.183565, y: 3.5, z: 22.260736}
+  m_LocalRotation: {x: 0.32324612, y: 0.010478587, z: -0.003579563, w: 0.94625014}
+  m_LocalPosition: {x: 24.183565, y: 2.56, z: 22.260736}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1560,7 +1560,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1924074186}
-  m_LocalRotation: {x: 0.34040442, y: 0.010411759, z: -0.003769577, w: 0.9402139}
+  m_LocalRotation: {x: 0.34040442, y: 0.0104117915, z: -0.0037695884, w: 0.9402139}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1807,7 +1807,7 @@ PrefabInstance:
     - target: {fileID: 6835407011724202897, guid: 6a24a69abf21e734e95e9432f22152b5,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.21
+      value: 3.097
       objectReference: {fileID: 0}
     - target: {fileID: 8538430776049525077, guid: 6a24a69abf21e734e95e9432f22152b5,
         type: 3}
@@ -1817,7 +1817,7 @@ PrefabInstance:
     - target: {fileID: 8538430776049525077, guid: 6a24a69abf21e734e95e9432f22152b5,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 0.06
       objectReference: {fileID: 0}
     - target: {fileID: 8538430776049525077, guid: 6a24a69abf21e734e95e9432f22152b5,
         type: 3}
@@ -1867,10 +1867,16 @@ PrefabInstance:
     - target: {fileID: 9148216789392680344, guid: 6a24a69abf21e734e95e9432f22152b5,
         type: 3}
       propertyPath: m_Center.y
-      value: 0.86
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 9148216789392680344, guid: 6a24a69abf21e734e95e9432f22152b5,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1089218276860599315, guid: 6a24a69abf21e734e95e9432f22152b5, type: 3}
+    - {fileID: 9148216789392680344, guid: 6a24a69abf21e734e95e9432f22152b5, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 6a24a69abf21e734e95e9432f22152b5, type: 3}
 --- !u!1 &8653796360630302763 stripped
 GameObject:
@@ -1919,6 +1925,7 @@ MonoBehaviour:
   movement: {x: 0, y: 0, z: 0}
   movementSpeed: 10
   turnSmoothTime: 0.1
+  targetAngle: 0
 --- !u!54 &8653796360630302769
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1933,8 +1940,8 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
+  m_Constraints: 80
+  m_CollisionDetection: 1
 --- !u!154 &8653796360630302770
 TerrainCollider:
   m_ObjectHideFlags: 0
@@ -1943,7 +1950,7 @@ TerrainCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8653796360630302763}
   m_Material: {fileID: 0}
-  m_Enabled: 0
+  m_Enabled: 1
   m_TerrainData: {fileID: 15600000, guid: d4eead4f53051024fa1c42c754518ffe, type: 2}
   m_EnableTreeColliders: 1
 --- !u!65 &8653796360630302771
@@ -1957,5 +1964,5 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 0.46, z: 1}
-  m_Center: {x: 0, y: 0.21, z: 0}
+  m_Size: {x: 0.87, y: -1.6, z: 0.52}
+  m_Center: {x: 0, y: 0.81, z: 0}
