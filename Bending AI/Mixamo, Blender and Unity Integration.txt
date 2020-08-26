@@ -1,0 +1,11 @@
+Mixamo, Blender and Unity integration
+
+Notes: 
+
+1. Download character fbx from Mixamo with a tpose stance. Import to unity as main character.
+
+2. Download desired animations in COLLADA (.dae) format for easy modification in blender.
+
+3. When importing .dae into blender, tick "fix leaf bones"  and "find bone chains". Bones will not be connected if left unchecked.
+
+4. After modifying animations, import them as .blend files into blender.
