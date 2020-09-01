@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,13 +10,15 @@ public class ThirdPersonController : MonoBehaviour
     float gravity = 8;
     float rotX = 0f;
     float rotY = 0f;
-
+    int punchArm = 2;
     public Transform Bot;
     public Transform Camera; 
     public Transform Head;
     Vector3 moveDir = Vector3.zero;
     CharacterController controller; 
     Animator anim;
+
+    public event EventHandler OnPunchAnimation;
 
     // Start is called before the first frame update
     void Start()
@@ -37,6 +40,9 @@ public class ThirdPersonController : MonoBehaviour
         rightStrafe();
         punch();
         block();
+        
+        Cursor.lockState = CursorLockMode.Locked;
+
     }
 
     private void walkForward()
@@ -103,17 +109,26 @@ public class ThirdPersonController : MonoBehaviour
     }
 
     private void punch()
-    {
-        if (Input.GetMouseButtonDown(0))
+    {   
+        //punching arm changes after every left click
+        if (Input.GetMouseButtonDown(0) && (punchArm%2==0)) 
         {
-            anim.SetFloat("leftClick", 1f);
+            punchArm +=1;
+            anim.SetInteger("leftClick", 1);
+            OnPunchAnimation?.Invoke(this, EventArgs.Empty);
         }
-        if (Input.GetMouseButtonUp(0))
+        else if (Input.GetMouseButtonDown(0) && (punchArm%2!=0))
         {
-            anim.SetFloat("leftClick", -1f);
+            punchArm += 1;
+            anim.SetInteger("leftClick", 0);
+            OnPunchAnimation?.Invoke(this, EventArgs.Empty);
+        }
+        else if (Input.GetMouseButtonUp(0))
+        {
+            anim.SetInteger("leftClick", -1);
         }
     }
-
+    
     private void block()
     {
         if (Input.GetMouseButtonDown(1))
