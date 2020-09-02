@@ -44,7 +44,7 @@ public class ShootRock : MonoBehaviour
             Debug.Log("Yeet the rock");
             GameObject shot = GameObject.Instantiate(rock, rockSpawnPos.position, Quaternion.identity);
             //shot.GetComponent<Rigidbody>().AddForceAtPosition((hit.point - rockSpawnPos.position)*rockForce*Time.deltaTime, shot.GetComponent<Rigidbody>().centerOfMass, ForceMode.VelocityChange);
-            shot.GetComponent<Rigidbody>().AddForce((hit.point - rockSpawnPos.position)*rockForce*Time.deltaTime);
+            shot.GetComponent<Rigidbody>().AddForce((hit.point - rockSpawnPos.position).normalized*rockForce);
         }
         else
         {
